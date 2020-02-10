@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/dist/jquery.quiz-min.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script>
+    var data = [{
+        question: "This is an example of question 1?",
+        options: ["Option1", "option2", "option3", "option4"],
+        answer: 0
+      },
+      {
+        question: "This is an example of question 2?",
+        options: ["Option1", "option2", "option3", "option4"],
+        answer: 1
+      },
+      {
+        question: "This is an example of question 3?",
+        options: ["Option1", "option2", "option3", "option4"],
+        answer: 2
+      },
+      {
+        question: "This is an example of question 4?",
+        options: ["Option1", "option2", "option3", "option4"],
+        answer: 3
+      },
+      {
+        question: "This is an example of question 5?",
+        options: ["Option1", "option2", "option3", "option4"],
+        answer: 0
+      }
+    ];
+    var currentQuestion = 0;
+    var correctAnswer = 0;
+    var quizcheck = false;
+
+    $(document).ready(function() {
+
+      displayQuestion();
+      $(this).find(".quizError").hide();
+      $(this).find(".submitbtn > .btn").click(function() {
+        if (!quizcheck) {
+
+          value = $("input[type='radio']:checked").val();
+          console.log(value);
+
+          if (value == undefined) {
+            $(document).find(".quizError").text("Please select any option !");
+            $(document).find(".quizError").show();
+          } else {
+            $(document).find(".quizError").hide();
+
+            if (value == data[currentQuestion].answer) {
+              correctAnswer++;
+            }
+
+            currentQuestion++;
+            if (currentQuestion < data.length) {
+              displayQuestion();
+            } else {
+              displayResult();
+              $(document).find(".submitbtn > .btn").text("Play Again?");
+              quizcheck = true;
+            }
+          }
+        } else {
+          quizcheck = false;
+          $(document).find(".submitbtn > .btn").text("Next Question");
+          resetQuiz();
+          displayQuestion();
+          hideResult();
+        }
+      });
+    });
+
+
+    function displayQuestion() {
+      //var question = data[currentQuestion].question;
+      //var questionClass = $(document).find(".question");
+      //var optionClass = $(document).find(".option");
+      var optionLength = data[currentQuestion].options.length;
+      $(document).find(".question").text(data[currentQuestion].question);
+      $(document).find(".option").find("li").remove();
+      var temp;
+      for (i = 0; i < optionLength; i++) {
+        temp = data[currentQuestion].options[i];
+        $('<li><input type="radio" value=' + i + ' name="choices" />' + temp + '</li>').appendTo(".option");
+      }
+    }
+
+    function resetQuiz() {
+      currentQuestion = 0;
+      correctAnswer = 0;
+      hideResult();
+    }
+
+    function displayResult() {
+      $(document).find(".result").text("You score: " + correctAnswer + " out of: " + data.length);
+      $(document).find(".result").show();
+    }
+
+    function hideResult() {
+      $(document).find(".result").hide();
+    }
+  </script>
+  <title>Quiz</title>
+</head>
+
+<body>
+  <div class="question"></div>
+  <div class="option"></div>
+  <div class="quizError"></div>
+  <div class="result"></div>
+  <div class="submitbtn">
+     <button type="button" class="btn">Next Question</button>
+  </div>
+</body>
+
+</html>
