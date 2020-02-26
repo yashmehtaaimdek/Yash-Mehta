@@ -1,171 +1,175 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Add Product</title>
-		<meta charset="UTF-8">
-		<style>
-			
-		</style>
-		
-		<script >
-			var cartTotal;
-			function addProduct(){
-				var num = 0;
-				let files = document.getElementById("productImage").files;	
-				if (files && files.length){
-					var fr = new FileReader();
-					fr.readAsDataURL(files[0]);
-					fr.onload = function(){
-					    num++;
-						var div = document.createElement('div');
-						var div1 = document.createElement('div');
-						var div2 = document.createElement('div');
-						var div3 = document.createElement('div');
-						var img = document.createElement('img');
-						var productName = document.createElement('label');
-						var productDescription = document.createElement('label');
-						var productQuantity = document.createElement('label');
-						var productPrice = document.createElement('label');
-						var button = document.createElement('button');
-						var br1 = document.createElement('br');
-						var br2 = document.createElement('br');
-						var br3 = document.createElement('br');
-						var br4 = document.createElement('br');
-						var br5 = document.createElement('br');
-						var br6 = document.createElement('br');
-						var inputQty = document.createElement('input');
-						inputQty.type = "number";
-						inputQty.value = 1;
-						
-						img.id = "productImage" + num;
-						productName.id = "productDescription" + num;
-						productDescription.id = "productQuantity" + num;
-						productQuantity.id = "productPrice" + num;
-						productPrice.id = "productPrice" + num;
-						inputQty.id = "inputQty" + num;
-						button.id = num;
+<head>
+	<title>Add Product</title>
+	<meta charset="UTF-8">
+	<style>
 
-						img.src = fr.result;
-						productName.innerHTML = document.getElementById("productName").value;
-						productDescription.innerHTML = document.getElementById("productDescription").value;
-						productPrice.innerHTML = document.getElementById("productPrice").value;
-						productQuantity.innerHTML = document.getElementById("productQuantity").value;
-						button.innerHTML = "Add to cart";
+	</style>
+
+	<script>
+		var cartTotal;
+		var num = 0;
+
+		function addProduct() {
+			let files = document.getElementById("productImage").files;
+			if (files && files.length) {
+				var fr = new FileReader();
+				fr.readAsDataURL(files[0]);
+				fr.onload = function() {
+					var div = document.createElement('div');
+					var div1 = document.createElement('div');
+					var div2 = document.createElement('div');
+					var div3 = document.createElement('div');
+					var img = document.createElement('img');
+					var productName = document.createElement('label');
+					var productDescription = document.createElement('label');
+					var productQuantity = document.createElement('label');
+					var productPrice = document.createElement('label');
+					var button = document.createElement('button');
+					var br1 = document.createElement('br');
+					var br2 = document.createElement('br');
+					var br3 = document.createElement('br');
+					var br4 = document.createElement('br');
+					var br5 = document.createElement('br');
+					var br6 = document.createElement('br');
+					var inputQty = document.createElement('input');
+					inputQty.type = "number";
+					inputQty.value = 1;
+
+					num++;
+					console.log(num);
+					img.id = "productImage" + num;
+					productName.id = "productDescription" + num;
+					productDescription.id = "productQuantity" + num;
+					productQuantity.id = "productPrice" + num;
+					productPrice.id = "productPrice" + num;
+					inputQty.id = "inputQty" + num;
+					button.id = num;
+
+					img.src = fr.result;
+					productName.innerHTML = document.getElementById("productName").value;
+					productDescription.innerHTML = document.getElementById("productDescription").value;
+					productPrice.innerHTML = document.getElementById("productPrice").value;
+					productQuantity.innerHTML = document.getElementById("productQuantity").value;
+					button.innerHTML = "Add to cart";
 
 
-						div1.appendChild(img);
-						div1.appendChild(br1);
-						div2.appendChild(productName);
-						div2.appendChild(br2);
-						div2.appendChild(productDescription);
-						div2.appendChild(br3);
-						div2.appendChild(productPrice);
-						div2.appendChild(br4);
-						div3.appendChild(productQuantity);
-						div3.appendChild(br5);
-						div3.appendChild(inputQty);
-						div3.appendChild(br6);
-						div3.appendChild(button);
+					div1.appendChild(img);
+					div1.appendChild(br1);
+					div2.appendChild(productName);
+					div2.appendChild(br2);
+					div2.appendChild(productDescription);
+					div2.appendChild(br3);
+					div2.appendChild(productPrice);
+					div2.appendChild(br4);
+					div3.appendChild(productQuantity);
+					div3.appendChild(br5);
+					div3.appendChild(inputQty);
+					div3.appendChild(br6);
+					div3.appendChild(button);
 
-						div.appendChild(div1);
-						div.appendChild(div2);
-						div.appendChild(div3);
-
-						button.onclick = function () {
-							addCart(this.id);
-						}
-
-						document.getElementById("productList").appendChild(div);
-						document.getElementById("productImage").value = "";
-						document.getElementById("productName").value = "";
-						document.getElementById("productDescription").value = "";
-						document.getElementById("productPrice").value = "";
-						document.getElementById("productQuantity").value = "";		
+					div.appendChild(div1);
+					div.appendChild(div2);
+					div.appendChild(div3);
+					button.onclick = function() {
+						addCart(button.id);
 					}
+
+					document.getElementById("productList").appendChild(div);
+					document.getElementById("productImage").value = "";
+					document.getElementById("productName").value = "";
+					document.getElementById("productDescription").value = "";
+					document.getElementById("productPrice").value = "";
+					document.getElementById("productQuantity").value = "";
 				}
 			}
-			function addCart(num){
-				var itemTotal;
-				var div = document.createElement('div');
-				var div1 = document.createElement('div');
-				var div2 = document.createElement('div');
-				var div3 = document.createElement('div');
-				var img = document.createElement('img');
-				var productName = document.createElement('label');
-				var productDescription = document.createElement('label');
-				var productQuantity = document.createElement('label');
-				var productPrice = document.createElement('label');
-				var total = document.createElement('label');
-				var br1 = document.createElement('br');
-				var br2 = document.createElement('br');
-				var br3 = document.createElement('br');
-				var br4 = document.createElement('br');
-				var br5 = document.createElement('br');
-				var br6 = document.createElement('br');
+		}
 
-				img = document.getElementById("productImage" + num); 
-				productName.innerHTML = document.getElementById("productName" + num).innerHTML;
-				productDescription.innerHTML = document.getElementById("productDescription" + num).innerHTML;
-				productQuantity.innerHTML = document.getElementById("Quantity" + num).innerHTML;
-				productPrice.innerHTML = document.getElementById("productPrice" + num).innerHTML;
-				if(productQuantity.innerHTML > 0){
-					itemTotal = document.getElementById("inputQty" + num).value * productPrice.innerHTML;
-				}
-				var cartTotal = cartTotal + itemTotal;
+		function addCart(id) {
+			var itemTotal;
+			var div = document.createElement('div');
+			var div1 = document.createElement('div');
+			var div2 = document.createElement('div');
+			var div3 = document.createElement('div');
+			var img = document.createElement('img');
+			var productName = document.createElement('label');
+			var productDescription = document.createElement('label');
+			var productQuantity = document.createElement('label');
+			var productPrice = document.createElement('label');
+			var total = document.createElement('label');
+			var br1 = document.createElement('br');
+			var br2 = document.createElement('br');
+			var br3 = document.createElement('br');
+			var br4 = document.createElement('br');
+			var br5 = document.createElement('br');
+			var br6 = document.createElement('br');
 
-				div1.appendChild(img);
-				div1.appendChild(br1);
-				div2.appendChild(productName);
-				div2.appendChild(br2);
-				div2.appendChild(productDescription);
-				div2.appendChild(br3);
-				div2.appendChild(productPrice);
-				div2.appendChild(br4);
-				div3.appendChild(productQuantity);
-				div3.appendChild(br5);
-				div3.appendChild(itemTotal);
-				div3.appendChild(br6)
-				div3.appendChild(cartTotal);
-
-				document.getElementById("productCart").appendChild(div);
+			img = document.getElementById("productImage" + id);
+			productName.innerHTML = document.getElementById("productName" + id).innerHTML;
+			productDescription.innerHTML = document.getElementById("productDescription" + id).innerHTML;
+			productQuantity.innerHTML = document.getElementById("Quantity" + id).innerHTML;
+			productPrice.innerHTML = document.getElementById("productPrice" + id).innerHTML;
+			if (productQuantity.innerHTML > 0) {
+				itemTotal = document.getElementById("inputQty" + num).value * productPrice.innerHTML;
 			}
-		</script>
-	</head>
-	<body>
+			var cartTotal = cartTotal + itemTotal;
+
+			div1.appendChild(img);
+			div1.appendChild(br1);
+			div2.appendChild(productName);
+			div2.appendChild(br2);
+			div2.appendChild(productDescription);
+			div2.appendChild(br3);
+			div2.appendChild(productPrice);
+			div2.appendChild(br4);
+			div3.appendChild(productQuantity);
+			div3.appendChild(br5);
+			div3.appendChild(itemTotal);
+			div3.appendChild(br6)
+			div3.appendChild(cartTotal);
+
+			document.getElementById("productCart").appendChild(div);
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<h1>Add Product</h1>
+
 		<div>
-			<h1>Add Product</h1>
-
-			<div>
-	        	<label>Product Name :</label>
-				<input type="text" id="productName">
-			</div>
-	        <br>
-			<div>
-	        	<label>Product Image :</label>
-				<input type="file" id="productImage" accept=".png, .jpg, .jpeg">
-			</div>
-			<br>
-			<div>
-	        	<label>Product Description :</label>
-				<input type="text" id="productDescription">
-			</div>
-	        <br>
-			<div>
-	        	<label>Quantity :</label>
-				<input type="number" id="productQuantity">
-			</div>
-	        <br>
-			<div>
-	        	<label>Price :</label>
-				<input type="number" id="productPrice">
-			</div>
-	        <br>
-			<div>
-				<button onclick="addProduct()">Add Product</button> 
-			</div>
+			<label>Product Name :</label>
+			<input type="text" id="productName">
 		</div>
+		<br>
+		<div>
+			<label>Product Image :</label>
+			<input type="file" id="productImage" accept=".png, .jpg, .jpeg">
+		</div>
+		<br>
+		<div>
+			<label>Product Description :</label>
+			<input type="text" id="productDescription">
+		</div>
+		<br>
+		<div>
+			<label>Quantity :</label>
+			<input type="number" id="productQuantity">
+		</div>
+		<br>
+		<div>
+			<label>Price :</label>
+			<input type="number" id="productPrice">
+		</div>
+		<br>
+		<div>
+			<button onclick="addProduct()">Add Product</button>
+		</div>
+	</div>
 
-		<div id="productList"></div>
-		<div id="productCart"></div>
-	</body>
+	<div id="productList"></div>
+	<div id="productCart"></div>
+</body>
+
 </html>

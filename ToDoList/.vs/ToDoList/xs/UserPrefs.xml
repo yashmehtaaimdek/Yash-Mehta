@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{883017C9-E9E7-4DA8-BD34-21A00162F792}|Default">
+  <MonoDevelop.Ide.ItemProperties.ToDoList.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CE42EA46-B550-4CEC-8AE6-93D365AE0E81" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ToDoList.iOS/Main.cs">
+    <Files>
+      <File FileName="ToDoList/TaskEntryPage.xaml.cs" Line="20" Column="10" IsPinned="True" />
+      <File FileName="ToDoList/TasksPage.xaml.cs" />
+      <File FileName="ToDoList/TasksPage.xaml" />
+      <File FileName="ToDoList/TaskEntryPage.xaml" />
+      <File FileName="ToDoList/App.xaml" />
+      <File FileName="ToDoList.iOS/Main.cs" Line="20" Column="2" />
+      <File FileName="ToDoList/App.xaml.cs" />
+      <File FileName="ToDoList/Data/TaskDatabase.cs" />
+      <File FileName="ToDoList/Models/Task.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ToDoList" expanded="True">
+            <Node name="ToDoList" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+              <Node name="TaskEntryPage.xaml" expanded="True" />
+              <Node name="TasksPage.xaml" expanded="True" />
+            </Node>
+            <Node name="ToDoList.Android" expanded="True" />
+            <Node name="ToDoList.iOS" expanded="True">
+              <Node name="Main.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ToDoList.Android PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

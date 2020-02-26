@@ -1,0 +1,14 @@
+/Users/yash/Projects/ToDoList/ToDoList/bin/Debug/netstandard2.0/ToDoList.deps.json
+/Users/yash/Projects/ToDoList/ToDoList/bin/Debug/netstandard2.0/ToDoList.dll
+/Users/yash/Projects/ToDoList/ToDoList/bin/Debug/netstandard2.0/ref/ToDoList.dll
+/Users/yash/Projects/ToDoList/ToDoList/bin/Debug/netstandard2.0/ToDoList.pdb
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/TaskEntryPage.xaml.g.cs
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/TasksPage.xaml.g.cs
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/ToDoList.AssemblyInfoInputs.cache
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/ToDoList.AssemblyInfo.cs
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/ToDoList.dll
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/ref/ToDoList.dll
+/Users/yash/Projects/ToDoList/ToDoList/obj/Debug/netstandard2.0/ToDoList.pdb

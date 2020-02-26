@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/yash/Projects/ToDoList/ToDoList.iOS/ToDoList.iOS.csproj": {}
+  },
+  "projects": {
+    "/Users/yash/Projects/ToDoList/ToDoList.iOS/ToDoList.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/yash/Projects/ToDoList/ToDoList.iOS/ToDoList.iOS.csproj",
+        "projectName": "ToDoList.iOS",
+        "projectPath": "/Users/yash/Projects/ToDoList/ToDoList.iOS/ToDoList.iOS.csproj",
+        "packagesPath": "/Users/yash/.nuget/packages/",
+        "outputPath": "/Users/yash/Projects/ToDoList/ToDoList.iOS/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/yash/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "/Users/yash/Projects/ToDoList/ToDoList/ToDoList.csproj": {
+                "projectPath": "/Users/yash/Projects/ToDoList/ToDoList/ToDoList.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.908675, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/yash/Projects/ToDoList/ToDoList/ToDoList.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/yash/Projects/ToDoList/ToDoList/ToDoList.csproj",
+        "projectName": "ToDoList",
+        "projectPath": "/Users/yash/Projects/ToDoList/ToDoList/ToDoList.csproj",
+        "packagesPath": "/Users/yash/.nuget/packages/",
+        "outputPath": "/Users/yash/Projects/ToDoList/ToDoList/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/yash/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.908675, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
