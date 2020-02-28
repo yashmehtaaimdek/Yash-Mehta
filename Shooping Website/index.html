@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Add Product</title>
 	<meta charset="UTF-8">
@@ -8,7 +9,7 @@
 	</style>
 
 	<script>
-		var cartTotal;
+		var ct = 0;
 		var num = 0;
 
 		function addProduct() {
@@ -33,25 +34,29 @@
 					var br4 = document.createElement('br');
 					var br5 = document.createElement('br');
 					var br6 = document.createElement('br');
+					var inputQtyLabel = document.createElement('label');
 					var inputQty = document.createElement('input');
+					var productPriceLabel = document.createElement('label');
 					inputQty.type = "number";
 					inputQty.value = 1;
 
 					num++;
 					console.log(num);
 					img.id = "productImage" + num;
-					productName.id = "productDescription" + num;
-					productDescription.id = "productQuantity" + num;
-					productQuantity.id = "productPrice" + num;
+					productName.id = "productName" + num;
+					productDescription.id = "productDescription" + num;
+					productQuantity.id = "productQuantity" + num;
 					productPrice.id = "productPrice" + num;
 					inputQty.id = "inputQty" + num;
 					button.id = num;
 
 					img.src = fr.result;
-					productName.innerHTML = document.getElementById("productName").value;
-					productDescription.innerHTML = document.getElementById("productDescription").value;
+					productName.innerHTML = "Product Name : " + document.getElementById("productName").value;
+					productDescription.innerHTML = "Product Description : " + document.getElementById("productDescription").value;
 					productPrice.innerHTML = document.getElementById("productPrice").value;
-					productQuantity.innerHTML = document.getElementById("productQuantity").value;
+					productQuantity.innerHTML = "Product Quantity : " + document.getElementById("productQuantity").value;
+					inputQtyLabel.innerHTML = "Select Quantity : "
+					productPriceLabel.innerHTML = "Product Price : "
 					button.innerHTML = "Add to cart";
 
 
@@ -61,10 +66,12 @@
 					div2.appendChild(br2);
 					div2.appendChild(productDescription);
 					div2.appendChild(br3);
+					div2.appendChild(productPriceLabel);
 					div2.appendChild(productPrice);
 					div2.appendChild(br4);
 					div3.appendChild(productQuantity);
 					div3.appendChild(br5);
+					div3.appendChild(inputQtyLabel);
 					div3.appendChild(inputQty);
 					div3.appendChild(br6);
 					div3.appendChild(button);
@@ -77,6 +84,7 @@
 					}
 
 					document.getElementById("productList").appendChild(div);
+
 					document.getElementById("productImage").value = "";
 					document.getElementById("productName").value = "";
 					document.getElementById("productDescription").value = "";
@@ -87,7 +95,7 @@
 		}
 
 		function addCart(id) {
-			var itemTotal;
+			var it = 0;
 			var div = document.createElement('div');
 			var div1 = document.createElement('div');
 			var div2 = document.createElement('div');
@@ -97,23 +105,33 @@
 			var productDescription = document.createElement('label');
 			var productQuantity = document.createElement('label');
 			var productPrice = document.createElement('label');
-			var total = document.createElement('label');
+			var inputQty = document.createElement('label');
+			var itemTotal = document.createElement('label');
+			var cartTotal = document.createElement('label');
 			var br1 = document.createElement('br');
 			var br2 = document.createElement('br');
 			var br3 = document.createElement('br');
 			var br4 = document.createElement('br');
 			var br5 = document.createElement('br');
 			var br6 = document.createElement('br');
+			var br7 = document.createElement('br');
 
-			img = document.getElementById("productImage" + id);
+			img.src = document.getElementById("productImage" + id).src;
 			productName.innerHTML = document.getElementById("productName" + id).innerHTML;
 			productDescription.innerHTML = document.getElementById("productDescription" + id).innerHTML;
-			productQuantity.innerHTML = document.getElementById("Quantity" + id).innerHTML;
+			productQuantity.innerHTML = document.getElementById("productQuantity" + id).innerHTML;
 			productPrice.innerHTML = document.getElementById("productPrice" + id).innerHTML;
-			if (productQuantity.innerHTML > 0) {
-				itemTotal = document.getElementById("inputQty" + num).value * productPrice.innerHTML;
+			inputQty.innerHTML = document.getElementById("inputQty" + id).value;
+			console.log("Input Qty:" + inputQty.innerHTML);
+			if (inputQty.innerHTML > 0) {
+				it = inputQty.innerHTML * productPrice.innerHTML;
 			}
-			var cartTotal = cartTotal + itemTotal;
+			ct = ct + it;
+			itemTotal.innerHTML = "Item total : " + it;
+			console.log(itemTotal.innerHTML);
+			cartTotal.innerHTML = "Cart total : " + ct;
+			console.log(cartTotal.innerHTML);
+			inputQty.innerHTML = "Selected Quantity : " + document.getElementById("inputQty" + id).value;
 
 			div1.appendChild(img);
 			div1.appendChild(br1);
@@ -125,9 +143,15 @@
 			div2.appendChild(br4);
 			div3.appendChild(productQuantity);
 			div3.appendChild(br5);
+			div3.appendChild(inputQty);
+			div3.appendChild(br6);
 			div3.appendChild(itemTotal);
-			div3.appendChild(br6)
+			div3.appendChild(br7)
 			div3.appendChild(cartTotal);
+
+			div.appendChild(div1);
+			div.appendChild(div2);
+			div.appendChild(div3);
 
 			document.getElementById("productCart").appendChild(div);
 		}
@@ -167,7 +191,6 @@
 			<button onclick="addProduct()">Add Product</button>
 		</div>
 	</div>
-
 	<div id="productList"></div>
 	<div id="productCart"></div>
 </body>
